@@ -8,7 +8,7 @@
       <div class="form-group">
         <label for="titulo">Titulo</label>
         <input id="titulo" name="titulo" class="form-control" #inputNome="ngModel" [(ngModel)]="foto.titulo" required max-length="5">
-        <div class="alert alert-danger" *ngIf="inputNome.errors.required && form.dirty">
+        <div class="alert alert-danger" *ngIf="form.dirty && inputNome.invalid && inputNome.errors.required">
           Título é obrigatório
         </div>
       </div>
