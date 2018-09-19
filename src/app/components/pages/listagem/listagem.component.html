@@ -10,7 +10,7 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2" *ngFor="let foto of (fotos | filtroBusca : termoBusca)">
+    <div class="col-sm-2" *ngFor="let foto of (fotos | async | filtroBusca : termoBusca)">
       <app-card-foto [foto]="foto">
           <button class="btn btn-danger d-block mx-auto mt-2" (click)="apagaFoto(foto)">
             Deletar

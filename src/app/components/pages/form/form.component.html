@@ -4,7 +4,7 @@
   <hr>
 
   <div class="row">
-    <form class="col-sm-6">
+    <form class="col-sm-6" (submit)="enviarFoto()">
       <div class="form-group">
         <label for="titulo">Titulo</label>
         <input id="titulo" name="titulo" class="form-control" [(ngModel)]="foto.titulo">

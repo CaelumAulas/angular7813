@@ -15,11 +15,18 @@ export class FormComponent implements OnInit {
 
   foto = {}
 
-  constructor(apiFotos: APIFotosService, rotaAtual: ActivatedRoute) {
+  constructor(private apiFotos: APIFotosService, rotaAtual: ActivatedRoute) {
     rotaAtual.params
       .pipe(filter(params => params.idFoto))
       .pipe(flatMap(params => apiFotos.get(params.idFoto)))
       .subscribe(foto => this.foto = foto)
+  }
+
+  enviarFoto() {
+    this.apiFotos.enviar(this.foto)
+      .subscribe(() => {
+        alert('Deu certo!')
+      })
   }
 
   ngOnInit() {
