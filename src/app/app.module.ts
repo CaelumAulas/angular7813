@@ -12,6 +12,8 @@ import { FormComponent } from './components/pages/form/form.component';
 import { TresPontinhosPipe } from './pipes/tres-pontinhos.pipe';
 import { FiltroBuscaPipe } from './pipes/filtro-busca.pipe';
 
+import { routerModuleConfigurado } from './router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { FiltroBuscaPipe } from './pipes/filtro-busca.pipe';
     FormComponent
   ],
   imports: [
+    routerModuleConfigurado,
     BrowserModule,
     HttpClientModule,
     BootstrapModule
