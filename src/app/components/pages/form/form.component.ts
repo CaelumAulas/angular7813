@@ -14,6 +14,7 @@ import { APIFotosService } from '../../../services/apifotos.service';
 export class FormComponent implements OnInit {
 
   foto = {}
+  form
 
   constructor(private apiFotos: APIFotosService, rotaAtual: ActivatedRoute) {
     rotaAtual.params
