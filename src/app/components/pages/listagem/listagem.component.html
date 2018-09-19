@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="form-group">
+    <input type="text" class="form-control" #inputDOM (input)="termoBusca = inputDOM.value">
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2" *ngFor="let foto of (fotos | filtroBusca : termoBusca)">
+      <app-card-foto [foto]="foto">
+          <button class="btn btn-danger d-block mx-auto mt-2" (click)="apagaFoto(foto)">
+            Deletar
+          </button>
+          <a class="btn btn-info d-block mx-auto mt-2" href="/cadastro">
+            Editar
+          </a>
+      </app-card-foto>
+    </div>
+  </div>
+</div>

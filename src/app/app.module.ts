@@ -5,8 +5,11 @@ import { BootstrapModule } from '../bootstrap/bootstrap.module'
 
 import { AppComponent } from './app.component';
 import { FotoComponent } from './components/foto/foto.component';
-import { TresPontinhosPipe } from './pipes/tres-pontinhos.pipe';
 import { CardFotoComponent } from './components/card-foto/card-foto.component';
+import { ListagemComponent } from './components/pages/listagem/listagem.component';
+import { FormComponent } from './components/pages/form/form.component';
+
+import { TresPontinhosPipe } from './pipes/tres-pontinhos.pipe';
 import { FiltroBuscaPipe } from './pipes/filtro-busca.pipe';
 
 @NgModule({
@@ -15,7 +18,9 @@ import { FiltroBuscaPipe } from './pipes/filtro-busca.pipe';
     FotoComponent,
     TresPontinhosPipe,
     CardFotoComponent,
-    FiltroBuscaPipe
+    FiltroBuscaPipe,
+    ListagemComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
