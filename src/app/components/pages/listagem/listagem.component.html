@@ -1,7 +1,12 @@
 <div class="container">
 
   <div class="form-group">
-    <input type="text" class="form-control" #inputDOM (input)="termoBusca = inputDOM.value">
+
+    <div class="input-group">
+      <a [routerLink]="['cadastro']" class="btn btn-primary input-group-addon">+</a>
+      <input type="text" class="form-control" #inputDOM (input)="termoBusca = inputDOM.value">
+    </div>
+
   </div>
 
   <div class="row">
@@ -10,7 +15,7 @@
           <button class="btn btn-danger d-block mx-auto mt-2" (click)="apagaFoto(foto)">
             Deletar
           </button>
-          <a class="btn btn-info d-block mx-auto mt-2" [routerLink]="['cadastro']">
+          <a class="btn btn-info d-block mx-auto mt-2" [routerLink]="['editar', foto._id]">
             Editar
           </a>
       </app-card-foto>

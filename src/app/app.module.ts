@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BootstrapModule } from '../bootstrap/bootstrap.module'
+import {FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { FotoComponent } from './components/foto/foto.component';
@@ -25,6 +26,7 @@ import { routerModuleConfigurado } from './router';
     FormComponent
   ],
   imports: [
+    FormsModule,
     routerModuleConfigurado,
     BrowserModule,
     HttpClientModule,

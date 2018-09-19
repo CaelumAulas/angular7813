@@ -1,32 +1,31 @@
-<!-- https://bit.ly/2AXKDny -->
 <section class="container">
 
-  <div class="jumbotron text-center">
-    <h2>Cadastro</h2>
-  </div>
+  <h2>Formulário</h2>
+  <hr>
 
   <div class="row">
     <form class="col-sm-6">
       <div class="form-group">
         <label for="titulo">Titulo</label>
-        <input id="titulo" name="titulo" class="form-control">
+        <input id="titulo" name="titulo" class="form-control" [(ngModel)]="foto.titulo">
       </div>
       <div class="form-group">
         <label for="url">URL</label>
-        <input id="url" name="url" class="form-control">
+        <input id="url" name="url" class="form-control" [(ngModel)]="foto.url" >
       </div>
       <div class="form-group">
         <label for="descricao">Descrição</label>
-        <textarea id="descricao" name="descricao" class="form-control">
+        <textarea id="descricao" name="descricao" class="form-control" [(ngModel)]="foto.descricao">
 
         </textarea>
       </div>
-      <a href="/" class="btn btn-link">
+      <a [routerLink]="['']" class="btn btn-link">
         Voltar
       </a>
       <button type="submit" class="btn btn-primary">
         Salvar
       </button>
     </form>
+    <app-card-foto [foto]="foto" class="col-sm-6"></app-card-foto>
   </div>
 </section>

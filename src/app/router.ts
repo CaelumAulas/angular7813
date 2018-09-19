@@ -11,5 +11,13 @@ export const routerModuleConfigurado = RouterModule.forRoot([
   {
     path: 'cadastro',
     component: FormComponent,
+  },
+  {
+    path: 'editar/:idFoto',
+    component: FormComponent,
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ]);
