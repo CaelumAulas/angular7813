@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
 import {filter, flatMap} from 'rxjs/operators'
@@ -13,6 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  nomePagina
 
   foto: any = {
     titulo: ''
@@ -25,6 +25,15 @@ export class FormComponent implements OnInit {
   })
 
   constructor(private apiFotos: APIFotosService, rotaAtual: ActivatedRoute) {
+    rotaAtual.params
+      .subscribe(params => {
+        if (params.idFoto) {
+          this.nomePagina = 'Edição'
+        } else {
+          this.nomePagina = 'Cadastro'
+        }
+      })
+
     rotaAtual.params
       .pipe(filter(params => params.idFoto))
       .pipe(flatMap(params => apiFotos.get(params.idFoto)))
